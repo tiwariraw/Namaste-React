@@ -1,4 +1,4 @@
-/* using pure JavaScript */
+/* DOM manipulation using pure JavaScript */
 
 /*
 const root = document.getElementById('root');
@@ -8,7 +8,7 @@ root.appendChild(heading)
 */
 
 
-/* using react */
+/* DOM manipulation using react */
 
 // creating react elements
 const heading1 = React.createElement('h1', {
@@ -32,4 +32,4 @@ const container = React.createElement('div', {
 
 // creating root using ReactDOM.createRoot
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(container);
+root.render(container); // passing the react element which needs to be rendered inside the root
