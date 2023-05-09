@@ -8,7 +8,9 @@ A: Both contains reusable pieces of code. The main difference is who calls whom.
 In layman terms, a `library` is a tool that provides a specific functionality whereas a `framework` is a set of tools and guidelines for building apps.
 
 https://www.interviewbit.com/blog/framework-vs-library/
+
 https://www.youtube.com/watch?v=D_MO9vIRBcA
+
 https://www.youtube.com/watch?v=sXA1zpv4DhA -> Hitesh Choudhary
 
 ## Q: What is `CDN`? Why do we use it?
@@ -17,7 +19,9 @@ A: A CDN is a network of servers that distributes content from an “origin” s
 The CDN delivers content through a network of servers in a secure and efficient way.
 
 https://blog.hubspot.com/website/what-is-a-cdn-definition
+
 https://www.youtube.com/watch?v=Bsq5cKkS33I -> IBM Technology
+
 https://www.youtube.com/watch?v=Bsq5cKkS33I ->ByteByteGo
 
 ## Q: Why`react` is known as `react`?
@@ -29,11 +33,14 @@ A: `React` is called `React` because of its ability to "react" to changes in sta
 A: Web pages often make requests to load resources on other servers. A `cross-origin` request is a request for a resource (e.g. style sheets, iframes, images, fonts, or scripts) from another domain. The crossorigin attribute on a <script> tag specifies that CORS is supported when loading an external script file from a third party server or domain. CORS is a standard mechanism used to retrieve files from other domains.
 
 https://www.w3schools.com/tags/att_script_crossorigin.asp
+
 https://www.dofactory.com/html/script/crossorigin#:~:text=The%20crossorigin%20attribute%20on%20a,retrieve%20files%20from%20other%20domains.
 
-https://www.youtube.com/watch?v=PNtFSVU-YTI  -> Web Dev Simplified
-https://www.youtube.com/watch?v=tcLW5d0KAYE  -> Akshay Saini
-https://www.youtube.com/watch?v=HwQNpeWfd_U  -> Codedamn
+https://www.youtube.com/watch?v=PNtFSVU-YTI -> Web Dev Simplified
+
+https://www.youtube.com/watch?v=tcLW5d0KAYE -> Akshay Saini
+
+https://www.youtube.com/watch?v=HwQNpeWfd_U -> Codedamn
 
 Also, read about the SOP(Same Origin Policy) of Browsers.
 
@@ -42,6 +49,7 @@ Also, read about the SOP(Same Origin Policy) of Browsers.
 A: `React` is a JavaScript library for building User Interface. `ReactDOM` is also a JS library which allows `React` to interact with the DOM. The `react` package contains `React.createElement()`, and several other functions. The `react-dom` package contains `ReactDOM.render()`, and `ReactDOMServer.renderToString()` for server-side rendering support.
 
 https://stackoverflow.com/questions/34114350/react-vs-reactdom
+
 https://medium.com/programming-sage/react-vs-react-dom-a0ed3aea9745
 
 ## Q: Difference between a `react.development.js` and a `react.production.js`?
