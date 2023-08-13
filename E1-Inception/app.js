@@ -12,13 +12,13 @@ root.appendChild(heading)
 
 // creating react elements
 const heading1 = React.createElement('h1', {
-    id: 'title', class: 'heading1', style: { color: "blue" }
+    id: 'title', className: 'heading1', style: { color: "blue" }
 },
     'Content of h1'
 )
 
 const heading2 = React.createElement('h2', {
-    id: 'title', class: 'heading2', style: { color: "green" }
+    id: 'title', className: 'heading2', style: { color: "green" }
 },
     'Content of h2'
 )
@@ -30,6 +30,41 @@ const container = React.createElement('div', {
     [heading1, heading2]
 )
 
-// creating root using ReactDOM.createRoot
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(container); // passing the react element which needs to be rendered inside the root
+root.render(container);
+
+
+/* Q: Create following HTML structure
+    <div id="parent">
+        <div id="child">
+            <h1 id="heading1">I am heading1</h1>
+            <h2 id="heading2">I am heading2</h2>
+        </div>
+    </div>
+*/
+
+// const heading1 = React.createElement('h1', {
+//     id: 'heading1',
+//     style: { "color": "green" }
+// }, 'I am heading1');
+
+// const heading2 = React.createElement('h2', {
+//     id: 'heading1',
+//     style: { "color": "red" }
+// }, 'I am heading2');
+
+// const child = React.createElement('div', {
+//     id: "child"
+// }, [heading1, heading2]);
+
+// const parent = React.createElement('div', {
+//     id: "parent"
+// }, [child]);
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(parent);
+
+
+
+
+

@@ -1,0 +1,41 @@
+/* header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* logo */
+.logo {
+    width: 100px;
+    margin-left: 2rem;
+
+    transition: transform 0.3s ease-out;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.07);
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+
+    margin-right: 2rem;
+    font-size: 1.5rem;
+}
+
+li {
+    margin: 0 1rem;
+}
+
+.cart {
+    cursor: pointer;
+    transition: color 0.1s ease-out;
+}
+
+.cart:hover {
+    color: orange;
+}

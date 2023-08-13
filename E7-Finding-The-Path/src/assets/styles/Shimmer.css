@@ -1,0 +1,39 @@
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin-top: 250px;
+}
+
+.shimmer-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-basis: 20%;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    padding: 0.7rem;
+}
+
+
+.box {
+    height: 180px;
+    width: 280px;
+    background-color: #f0f0f5;
+}
+
+.para {
+    height: 20px;
+    background-color: #f0f0f5;
+}
+
+.p1 {
+    width: 80%;
+}
+
+.p2 {
+    width: 60%;
+}
