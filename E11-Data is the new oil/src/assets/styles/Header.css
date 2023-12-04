@@ -1,0 +1,93 @@
+/* header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    /* background-color is set so that all the other content under it should not be seen when scrolled */
+    background-color: #fff;
+    padding: 0.2rem 0;
+    z-index: 2;
+
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -4px rgba(0, 0, 0, .1);
+}
+
+/* logo */
+.logo {
+    width: 80px;
+    margin-left: 2rem;
+
+    transition: transform 0.3s ease-out;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.07);
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    margin-right: 2rem;
+    font-size: 1.5rem;
+}
+
+li {
+    margin: 0 1rem;
+}
+
+.cart {
+    cursor: pointer;
+    transition: color 0.1s ease-out;
+
+    /* to position cart-items length */
+    position: relative;
+    margin-right: 2.5rem;
+}
+
+.cart:hover {
+    color: orange;
+}
+
+.cart-items {
+    position: absolute;
+    top: -8px;
+    left: 28px;
+    font-size: 1.25rem;
+}
+
+/* login button */
+.login-btn {
+    width: 70px;
+    padding: 0.6rem 1rem;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    background-color: #E26310;
+    color: #fff;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #A0522D;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.online-offline {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+}

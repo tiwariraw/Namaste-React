@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from './Shimmer';
 import { RESTAURANT_API } from "../utils.js/constant";
+import useOnlineStatus from "../utils.js/useOnlineStatus";
 import '../assets/styles/Body.css';
 // import { restaurantsList } from '../utils.js/mockData';
 
@@ -21,16 +22,23 @@ const Body = () => {
     }, []);
 
     const fetchData = async () => {
-        const data = await fetch(RESTAURANT_API);
-        const json = await data.json();
-        console.log(json);
+        try {
+            const data = await fetch(RESTAURANT_API);
+            if (!data.ok) {
+                console.log('failed to fetch the data');
+            }
+            const json = await data.json();
+            console.log(json);
 
-        // optional chaining
-        const arr1 = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+            // optional chaining
+            const arr1 = json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
-        console.log(arr1);
-        setRestaurantsArray(arr1);
-        setFilteredRestaurantsArray(arr1);
+            console.log(arr1);
+            setRestaurantsArray(arr1);
+            setFilteredRestaurantsArray(arr1);
+        } catch (err) {
+            console.log(err.message);
+        }
     }
 
     const handleTopRatedRestaurants = () => {
@@ -56,6 +64,13 @@ const Body = () => {
         });
 
         setFilteredRestaurantsArray(searchResult);
+    }
+
+    // online status (we are calling useOnlineStatus hook)
+    const onlineStatus = useOnlineStatus();
+
+    if (onlineStatus === false) {
+        return <h1 className="online-status">Looks like you are offline!! Please check your internet connection.</h1>;
     }
 
     // till we receive data from swiggy API, show fake cards (Shimmer UI) in your UI

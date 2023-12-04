@@ -1,38 +1,31 @@
-import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import useFetchRestaurantMenu from '../utils.js/useFetchRestaurantMenu';
 import { CDN_IMAGE_URL } from '../utils.js/constant';
 import ShimmerResMenu from '../components/ShimmerResMenu';
 import '../assets/styles/RestaurantMenu.css';
 
 const RestaurantMenu = () => {
-    const [resInfo, setResInfo] = useState(null);
+    // const [resInfo, setResInfo] = useState(null);
 
     const { resId } = useParams();
 
-    const MENU_API = 'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.120194&lng=77.619249&restaurantId=' + resId;
+    // useFetchRestaurantMenu hook fetched the data from Swiggy Restaurant Menu api for the passed resId.
+    const { resInfo, error } = useFetchRestaurantMenu(resId);
 
-    useEffect(() => {
-        fetchMenu();
-    }, []);
-
-    const fetchMenu = async () => {
-        const data = await fetch(MENU_API);
-        const json = await data.json();
-        // console.log(json);
-        setResInfo(json?.data);
-        // console.log(json?.data?.cards[0]?.card?.card?.info);
+    if (error) {
+        return <div>Error: {error.message}</div>
     }
 
     if (resInfo === null) {
         return <ShimmerResMenu />;
     }
 
-    const { name, cloudinaryImageId, avgRating, costForTwoMessage, cuisines, areaName, sla } = resInfo?.cards[0]?.card?.card?.info || {};
+    const { name, cloudinaryImageId, avgRating, costForTwoMessage, cuisines, areaName, sla } = resInfo?.data?.cards[0]?.card?.card?.info || {};
 
     // const { itemCards } = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card || {};
     // console.log(itemCards); ---> an array of menu items object
 
-    let cards = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
+    let cards = resInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
     cards = cards?.slice(2, 11);
 
     const allItemCards = [];
@@ -62,10 +55,10 @@ const RestaurantMenu = () => {
                 <div className='res-menu-details'>
                     <h1>{name}</h1>
                     <h3 className='area-name'>{areaName}</h3>
-                    <h4 className='cuisines-name'>{cuisines.join(', ')}</h4>
+                    <h4 className='cuisines-name'>{cuisines?.join(', ')}</h4>
                     <div className='rating-distance-price'>
                         <h4 style={{ color: "#32de84" }}><i className="fas fa-star" style={{ color: "#32de84" }}></i> {avgRating}</h4>
-                        <h4>{sla.slaString}</h4>
+                        <h4>{sla?.slaString}</h4>
                         <h4>{costForTwoMessage}</h4>
                     </div>
 
