@@ -23,6 +23,7 @@ const Header = () => {
     // Subscibing to the store using a selector
     const cartItems = useSelector((store) => {
         // console.log(store);
+        console.log(store.cart.items);
         return store.cart.items;
     });
     // console.log(cartItems);
@@ -44,8 +45,10 @@ const Header = () => {
                 <li><Link to="/about" className='nav-link'>About Us</Link></li>
                 <li><Link to="/contact" className='nav-link'>Contact Us</Link></li>
                 <li className='cart'>
-                    <i className="fa-solid fa-cart-shopping"></i>
-                    <div className='cart-items'>{cartItems.length}</div>
+                    <Link to="/cart" className='cart-link'>
+                        <i className="fa-solid fa-cart-shopping"></i>
+                        <div className='cart-items'>{cartItems.length}</div>
+                    </Link>
                 </li>
                 <button className='login-btn' onClick={handleLoginClick}>{value}</button>
             </ul>

@@ -54,15 +54,19 @@ li {
     margin-right: 2.5rem;
 }
 
-.cart:hover {
-    color: orange;
-}
-
 .cart-items {
     position: absolute;
     top: -8px;
-    left: 28px;
+    left: 30px;
     font-size: 1.25rem;
+}
+
+.cart-link {
+    color: #222;
+}
+
+.cart-link:hover {
+    color: orange;
 }
 
 /* login button */

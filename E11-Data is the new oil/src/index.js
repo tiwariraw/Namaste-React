@@ -7,6 +7,7 @@ import Contact from './pages/Contact';
 import RestaurantMenu from './pages/RestaurantMenu';
 import ErrorPage from './pages/ErrorPage';
 import Shimmer from './components/Shimmer';
+import Cart from './components/Cart';
 
 // chunking / code-splitting / dynamic bundling / lazy loading / on demand loading / dynamic import
 /* we won't import Grocery component like 
@@ -50,6 +51,10 @@ const appRouter = createBrowserRouter([
                 path: "/restaurants/:resId",
                 element: <RestaurantMenu />
             },
+            {
+                path: "/cart",
+                element: <Cart />
+            }
         ]
     }
 ])
